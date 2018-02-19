@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+    <h1 class='roboto'>New Booking</h1>
+    <%= simple_form_for @booking do |f| %>
+      <%= f.input :status %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :grandma_id, collection: @grandmas %>
+      <%= f.input :user_id, collection: @users %>
+      <%= f.submit "add booking", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
