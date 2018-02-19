@@ -1,0 +1,11 @@
+<h1>Grandmas#edit</h1>
+<p>Find me in app/views/grandmas/edit.html.erb</p>
+<%= simple_form_for [@grandma] do |f| %>
+  <%= f.input :price %>
+  <%= f.input :baby_sitting,     as: :radio_buttons %>
+  <%= f.input :cooking,     as: :radio_buttons %>
+  <%= f.input :knitting,     as: :radio_buttons %>
+  <%= f.input :pet_sitting,     as: :radio_buttons %>
+  <%= f.submit "Done", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Cancel", grandma_path(@grandma), class: "btn btn-primary" %>
