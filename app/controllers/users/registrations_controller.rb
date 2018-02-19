@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    if user_type == "Grandma"
+    if resource.user_type == "Grandma"
       redirect_to edit_grandma_path(resource)
     else
       redirect_to bookings_path
