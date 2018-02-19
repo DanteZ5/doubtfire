@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 
+Booking.destroy_all
 Grandma.destroy_all
 User.destroy_all
 
@@ -18,12 +19,18 @@ users_attributes = [
 ]
 users = User.create!(users_attributes)
 
-p users.second.id
-
 grandma_attributes = [
 { user_id: users.second.id, price: 13, cooking: true },
 { user_id: users.third.id, price: 15, knitting: true }
 ]
 grandmas = Grandma.create!(grandma_attributes)
+
+booking_attributes = [
+{ user_id: users.first.id, grandma_id: grandmas.first.id, status: "pending",
+  start_date: "12/03/2018", end_date: "12/05/2018"  },
+  { user_id: users.last.id, grandma_id: grandmas.second.id, status: "approved",
+  start_date: "23/03/2018", end_date: "03/04/2018"  }
+]
+bookings = Booking.create!(booking_attributes)
 
 
