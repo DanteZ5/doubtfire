@@ -5,6 +5,12 @@ class BookingsController < ApplicationController
     @users = User.all
   end
 
+   def create
+    @booking = Booking.new(booking_params)
+    @booking.save
+    redirect_to booking_path(@booking)
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end

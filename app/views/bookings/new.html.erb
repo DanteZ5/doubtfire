@@ -5,8 +5,8 @@
       <%= f.input :status %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
-      <%= f.input :grandma, collection: @grandmas %>
-      <%= f.input :user, collection: @users %>
+      <%= f.input :grandma_id, collection: @grandmas %>
+      <%= f.input :user_id, collection: @users %>
       <%= f.submit "add booking", class: "btn btn-primary" %>
     <% end %>
   </div>
