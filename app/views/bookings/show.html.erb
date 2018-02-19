@@ -2,10 +2,11 @@
   <div class="col-md-4 col-md-offset-4">
     <h1 class='roboto'>Booking</h1>
     <ul>
+      <li>Statut : <%= @booking.status %></li>
       <li>Commencement <%= @booking.start_date %></li>
       <li>Fin <%= @booking.end_date %></li>
-      <li>Grandma is ...</li>
-      <li>User is ...</li>
+      <li>Grandma is <%= @booking.grandma.user.email %></li>
+      <li>User is <%= @booking.user.email %></li>
       <li>Services are ...</li>
     </ul>
   </div>
