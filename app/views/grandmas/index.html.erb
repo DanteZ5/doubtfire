@@ -6,27 +6,36 @@
 </div>
 
 
-<% @grandmas.each do |grandma| %>
-<%= link_to grandma.user.email, grandma_path(grandma) %>
-<% if grandma.user.photo? %>
-  <%= image_tag grandma.user.photo %>
-  <% end %>
-<% end %>
-
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-3 col-sm-3 grandmas">
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://bridoz.com/wp-content/uploads/2015/04/mamie-cigare-2.jpg')">
-        <div class="grandma-title">
-          <h2>Jacqueline</h2>
-          <p>Paris</p>
-        <a class="card-link" href="#" ></a>
-        </div>
+    <% @grandmas.each do |grandma| %>
+      <div class="col-xs-12 col-sm-3 col-md-3">
+
+        <% if grandma.user.photo %>
+          <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
+            <div class="grandma-title">
+              <h2><%= grandma.user.first_name %></h2>
+              <p><%= grandma.user.address %></p>
+                <%= link_to "", grandma_path(grandma), class:"card-link" %>
+            </div>
+          </div>
+
+        <% else  %>
+
+          <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
+            <div class="grandma-title">
+              <h2><%= grandma.user.first_name %></h2>
+              <p><%= grandma.user.address %></p>
+                <%= link_to "", grandma_path(grandma), class:"card-link" %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
+
 
 
 
