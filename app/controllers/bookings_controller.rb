@@ -11,8 +11,10 @@ class BookingsController < ApplicationController
         booli = true
       end
     end
-    @bookings = policy_scope(Booking).order(created_at: :desc) if booli == false
-    authorize @bookings if booli == false
+    unless booli
+      @bookings = policy_scope(Booking).order(created_at: :desc)
+      authorize @bookings
+    end
   end
 
   def new
