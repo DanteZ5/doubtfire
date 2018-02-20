@@ -8,6 +8,7 @@
 
 <% @grandmas.each do |grandma| %>
 <%= link_to grandma.user.email, grandma_path(grandma) %>
+<%= image_tag grandma.user.photo %>
 <% end %>
 
 
