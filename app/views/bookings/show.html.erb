@@ -1,13 +1,19 @@
 <div class="container">
   <div class="col-md-4 col-md-offset-4">
     <h1 class='roboto'>Booking</h1>
+    <% start_date = eval(@booking.start_date) %>
+    <% end_date = eval(@booking.end_date) %>
     <ul>
-      <li>Statut : <%= @booking.status %></li>
-      <li>Commencement <%= @booking.start_date %></li>
-      <li>Fin <%= @booking.end_date %></li>
+      <li>Status: <%= @booking.status %></li>
+      <li>Commencement: <%= "#{start_date[3]} / #{start_date[2]} / #{start_date[1]} " %></li>
+      <li>Fin: <%= "#{end_date[3]} / #{end_date[2]} / #{end_date[1]} " %></li>
       <li>Grandma is <%= @booking.grandma.user.email %></li>
       <li>User is <%= @booking.user.email %></li>
-      <li>Services are ...</li>
+      <li>Knitting: <%= @booking.grandma.knitting %></li>
+      <li>Pet Sitting: <%= @booking.grandma.pet_sitting %></li>
+      <li>Baby Sitting: <%= @booking.grandma.baby_sitting %></li>
+      <li>Cooking: <%= @booking.grandma.cooking %></li>
+      <li>Price is: <%= @booking.grandma.price %> euros / hour</li>
     </ul>
   </div>
 </div>

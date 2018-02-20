@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @grandma = Grandma.find(params[:grandma_id])
-    @collection = ["en attente", "accepté", "refusé"]
     authorize @booking
   end
 
@@ -18,6 +17,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
   end
+
+  # def edit
+  #   @collection = ["pending", "accepted", "refused"]
+  # end
 
   def update
     @booking.update(booking_params)
