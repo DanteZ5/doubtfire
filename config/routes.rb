@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   resources :grandmas, except: [:delete, :destroy] do
-     resources :bookings, only: [:new, :show, :create, :update]
+     resources :bookings, only: [:index, :new, :show, :create, :update]
   end
 
 

@@ -1,4 +1,10 @@
 class BookingsController < ApplicationController
+
+  def index
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    authorize @bookings
+  end
+
   def new
     @booking = Booking.new
     @grandma = Grandma.find(params[:grandma_id])
