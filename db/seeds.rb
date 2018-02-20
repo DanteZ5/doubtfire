@@ -12,10 +12,14 @@ Grandma.destroy_all
 User.destroy_all
 
 users_attributes = [
-{ email: 'raymonde@laposte.fr', password: 'kiki38' },
-{ email: 'françoise@laposte.fr', password: 'michael44' },
-{ email: 'jacqueline@laposte.fr', password: 'jerome56' },
-{ email: 'yvette@laposte.fr', password: 'fabrice' }
+{ email: 'raymonde@laposte.fr', password: 'kiki38',
+  photo: "https://www.gannett-cdn.com/-mm-/1d4f87c88586d269bff259ac42d530427b1c756f/c=123-0-2001-1412&r=x404&c=534x401/local/-/media/2017/05/05/DetroitFreeP/DetroitFreePress/636296157143304774-GettyImages-501537803.jpg" },
+{ email: 'françoise@laposte.fr', password: 'michael44',
+  photo: "https://mellowinthemidwest.files.wordpress.com/2014/11/grandma.jpg" },
+{ email: 'jacqueline@laposte.fr', password: 'jerome56',
+  photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqOHO_ZFHFogOGU6QB6Lq1XWsVCUaQ7ZRr4C7x-HV19YGE8cuW" },
+{ email: 'yvette@laposte.fr', password: 'fabrice',
+  photo: "https://travisbarbour.files.wordpress.com/2013/04/grandma-cover.jpg" }
 ]
 users = User.create!(users_attributes)
 
@@ -32,5 +36,3 @@ booking_attributes = [
   start_date: "23/03/2018", end_date: "03/04/2018"  }
 ]
 bookings = Booking.create!(booking_attributes)
-
-
