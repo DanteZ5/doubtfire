@@ -4,15 +4,15 @@ class BookingsController < ApplicationController
   def index #relatif au user
 
     grandmas = Grandma.all
-    grandmas.each do |grandma|
     booli = false
+    grandmas.each do |grandma|
       if grandma.user == current_user
         @bookings = grandma.bookings
         booli = true
       end
     end
-    @bookings = policy_scope(Booking).order(created_at: :desc) if booli = false
-    authorize @bookings
+    @bookings = policy_scope(Booking).order(created_at: :desc) if booli == false
+    authorize @bookings if booli == false
   end
 
   def new
