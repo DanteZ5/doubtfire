@@ -1,17 +1,17 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
-    @grandmas = Grandma.all
     @grandma = Grandma.find(params[:grandma_id])
-    @users = User.all
+    @collection = ["en attente", "accepté", "refusé"]
     authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
+    @booking.user_id = current_user.id
     @booking.save
-    redirect_to booking_path(@booking)
+    redirect_to grandma_booking_path(@booking.grandma, @booking)
   end
 
   def show
