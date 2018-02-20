@@ -12,13 +12,17 @@ Grandma.destroy_all
 User.destroy_all
 
 users_attributes = [
-{ email: 'raymonde@laposte.fr', password: 'kiki38',
+{ email: 'raymonde@laposte.fr', password: 'kiki38', first_name: 'Raymonde',
+  address:'Paris',
   photo: "https://www.gannett-cdn.com/-mm-/1d4f87c88586d269bff259ac42d530427b1c756f/c=123-0-2001-1412&r=x404&c=534x401/local/-/media/2017/05/05/DetroitFreeP/DetroitFreePress/636296157143304774-GettyImages-501537803.jpg" },
-{ email: 'françoise@laposte.fr', password: 'michael44',
+{ email: 'françoise@laposte.fr', password: 'michael44', first_name: 'Françoise',
+  address:'Bourg Palette',
   photo: "https://mellowinthemidwest.files.wordpress.com/2014/11/grandma.jpg" },
-{ email: 'jacqueline@laposte.fr', password: 'jerome56',
+{ email: 'jacqueline@laposte.fr', password: 'jerome56', first_name: 'Jacqueline',
+  address:'Nantes',
   photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqOHO_ZFHFogOGU6QB6Lq1XWsVCUaQ7ZRr4C7x-HV19YGE8cuW" },
-{ email: 'yvette@laposte.fr', password: 'fabrice',
+{ email: 'yvette@laposte.fr', password: 'fabrice', first_name: 'Yvette',
+  address:'Montpellier',
   photo: "https://travisbarbour.files.wordpress.com/2013/04/grandma-cover.jpg" }
 ]
 users = User.create!(users_attributes)
