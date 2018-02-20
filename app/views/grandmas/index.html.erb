@@ -8,7 +8,9 @@
 
 <% @grandmas.each do |grandma| %>
 <%= link_to grandma.user.email, grandma_path(grandma) %>
-<%= image_tag grandma.user.photo %>
+<% if grandma.user.photo? %>
+  <%= image_tag grandma.user.photo %>
+  <% end %>
 <% end %>
 
 
