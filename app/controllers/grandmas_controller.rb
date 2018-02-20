@@ -1,7 +1,25 @@
 class GrandmasController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @grandmas = policy_scope(Grandma)
+  end
+
+  def new
+    @grandma = Grandma.new
+    authorize @grandma
+  end
+
+  def create
+    @grandma = Grandma.new(grandma_params)
+    @grandma.user = current_user
+    authorize @grandma
+
+    if @grandma.save
+      redirect_to grandma_path(@grandma)
+    else
+      render :new
+    end
   end
 
   def show
@@ -19,10 +37,6 @@ class GrandmasController < ApplicationController
     authorize @grandma
     @grandma.update(grandma_params)
     redirect_to grandma_path(@grandma)
-  end
-
-  def create
-    authorize @grandma
   end
 
   private
