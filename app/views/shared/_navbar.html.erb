@@ -7,7 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "OUR GRANDMAS", "#grandma-card", class: "navbar-wagon-item navbar-wagon-link" %>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">YOUR BOOKINGS</a>
+    <%= link_to "YOUR BOOKINGS", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
@@ -25,8 +25,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">OUR GRANDMAS</a></li>
-        <li><a href="#">YOUR BOOKINGS</a></li>
+        <li><%= link_to "OUR GRANDMAS", "#grandma-card", class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "YOUR BOOKINGS", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
