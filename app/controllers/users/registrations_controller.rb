@@ -54,6 +54,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     if resource.user_type == "Grandma"
       return new_grandma_path
+      flash.keep(:notice)
     else
       return root_path
     end
