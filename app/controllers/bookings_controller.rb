@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
   end
 
   # def edit
-  #   @collection = ["pending", "accepted", "refused"]
+  #   @collection = ["pending", "accepted", "canceled"]
   # end
 
   def update

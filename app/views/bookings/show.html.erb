@@ -5,8 +5,8 @@
     <% end_date = eval(@booking.end_date) %>
     <ul>
       <li>Status: <%= @booking.status %></li>
-      <li>Commencement: <%= "#{start_date[3]} / #{start_date[2]} / #{start_date[1]} " %></li>
-      <li>Fin: <%= "#{end_date[3]} / #{end_date[2]} / #{end_date[1]} " %></li>
+      <li>Start: <%= "#{start_date[3]} / #{start_date[2]} / #{start_date[1]} " %></li>
+      <li>End: <%= "#{end_date[3]} / #{end_date[2]} / #{end_date[1]} " %></li>
       <li>Grandma is <%= @booking.grandma.user.email %></li>
       <li>User is <%= @booking.user.email %></li>
       <li>Knitting: <%= @booking.grandma.knitting %></li>
