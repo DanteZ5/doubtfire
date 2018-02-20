@@ -1,5 +1,8 @@
-<h1>index self</h1>
-<% raise %>
-<% @bookings.each do |booking| %>
+<h1>index de bookings</h1>
 
+<% @bookings.each do |booking| %>
+  <p>ID: <%= booking.id %></p>
+  <p>Status: <%= booking.status %></p>
+  <p>User: <%= booking.user.email %></p>
+  <p>Grandma: <%= booking.grandma.user.email %></p>
 <% end %>

@@ -1,7 +1,14 @@
 class BookingsController < ApplicationController
+  skip_after_action :verify_policy_scoped, only: :index
 
-  def index
-    @bookings = policy_scope(Booking).order(created_at: :desc)
+  def index #relatif au user et/ou grandma
+    grandma = Grandma.find(params[:grandma_id])
+
+    if grandma.user == current_user
+      @bookings = grandma.bookings
+    else
+      @bookings = policy_scope(Booking).order(created_at: :desc)
+    end
     authorize @bookings
   end
 
