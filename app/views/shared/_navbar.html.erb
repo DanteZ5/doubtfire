@@ -6,10 +6,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">YOUR BOOKINGS</a>
-
+    <%= link_to "OUR GRANDMAS", grandmas_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "OUR GRANDMAS", booking_path(@booking), class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
