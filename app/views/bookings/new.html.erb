@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-4 col-md-offset-4">
     <h1 class='roboto'>New Booking</h1>
-    <%= simple_form_for @booking do |f| %>
+    <%= simple_form_for [@grandma, @booking] do |f| %>
       <%= f.input :status %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
