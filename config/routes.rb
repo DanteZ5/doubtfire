@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users, controllers: { registrations: "users/registrations" }
 
-  resources :grandmas, except: [:delete] do
+  resources :grandmas, except: [:delete, :destroy] do
      resources :bookings, only: [:new, :create, :update]
   end
  resources :bookings, only: [:show]
