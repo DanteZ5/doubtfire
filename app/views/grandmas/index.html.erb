@@ -2,6 +2,9 @@
   <div class="banner-content">
     <h1>Doubtfire</h1>
     <p>Faites confiance à l'expérience</p>
+    <% unless user_signed_in? %>
+    <%= link_to "Create an account", new_user_registration_path, class:"btn-classic" %>
+    <% end %>
   </div>
 </div>
 
