@@ -20,7 +20,7 @@
             <div class="grandma-title">
               <h2><%= grandma.user.first_name %></h2>
               <p><%= grandma.user.address %></p>
-                <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id, class:"card-link" %>
+                <%= link_to "", grandma_path(grandma), class:"card-link" %>
             </div>
           </div>
 
@@ -30,7 +30,7 @@
             <div class="grandma-title">
               <h2><%= grandma.user.first_name %></h2>
               <p><%= grandma.user.address %></p>
-                <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id, class:"card-link" %>
+                <%= link_to "", grandma_path(grandma), class:"card-link" %>
             </div>
           </div>
         <% end %>
