@@ -19,20 +19,19 @@
           <% if @booking.status == "pending" %>
             <h1><div class="status-pending">
             Your meeting is pending validation
-            </div>
-          <% elsif @booking.status == "accepted"%>
-            <p id="status-valid">Your meeting is accepted</p>
+            </div></h1>
+          <% elsif @booking.status == "validate"%>
+            <h1><div class="status-valid">Your meeting is accepted</div></h1>
           <% else %>
-            <p id="status-canceled">This meeting was canceled</p>
+            <h1><div class="status-canceled">This meeting was canceled</div></h1>
           <% end %>
-          </h1>
       </div>
 
       <div class="card-show">
         <h3>Meeting details</h3>
-        <p>Start: <%= "#{start_date[2]} / #{start_date[1]} / #{start_date[0]}" %></p>
-        <p>End: <%= "#{end_date[2]} / #{end_date[1]} / #{end_date[0]}" %></p>
-        <p> Price is: <%= @booking.grandma.price %> euros / hour</p>
+        <p><%= "Your meeting will start on #{start_date[2]} #{start_date[1]} #{start_date[0]}" %></p>
+        <p><%= "It will end on #{end_date[2]} #{end_date[1]} #{end_date[0]}" %></p>
+        <p id:"price"> Price is: <%= @booking.grandma.price %> euros / hour</p>
       </div>
 
       <div class="card-show">

@@ -1,8 +1,47 @@
-<h1>index de bookings / user</h1>
+<div class="container">
+  <h3 style="color: #EF7E56;">Your bookings</h3>
 
-<% @bookings.each do |booking| %>
-  <p>ID: <%= link_to booking.id, grandma_booking_path(booking.grandma.user.id, booking.id)  %></p>
-  <p>Status: <%= booking.status %></p>
-  <p>User: <%= booking.user.id %></p>
-  <p>Grandma: <%= booking.grandma.user.id %></p>
-<% end %>
+    <div class="container" id="grandma-cards">
+      <div class="row">
+        <% @bookings.each do |booking| %>
+          <div class="col-xs-12 col-sm-3 col-md-4">
+            <% if booking.user.photo %>
+              <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.user.photo %>')">
+                <div class="grandma-title">
+                  <h2><%= booking.user.first_name %></h2>
+
+                     <% if booking.status == "pending" %>
+                        <p><div class="status-pending">Pending meeting</div></p>
+                      <% elsif booking.status == "validate"%>
+                        <p><div class="status-valid">Meeting accepted</div></p>
+                      <% else %>
+                        <p><div class="status-canceled">Meeting canceled</div></p>
+                      <% end %>
+                  <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id), class:"card-link" %>
+                </div>
+              </div>
+
+                  <% else  %>
+
+              <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
+                <div class="grandma-title">
+                  <h2><%= booking.user.first_name %></h2>
+                      <% if booking.status == "pending" %>
+                        <p><div class="status-pending">Pending meeting</div>
+                      <% elsif booking.status == "validate"%>
+                        <p id="status-valid">Meeting accepted</p>
+                      <% else %>
+                        <p id="status-canceled">Meeting canceled</p>
+                      <% end %>
+                      </p>
+                  <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id), class:"card-link" %>
+                </div>
+              </div>
+
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+</div>
