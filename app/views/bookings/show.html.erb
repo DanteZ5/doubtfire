@@ -16,14 +16,16 @@
         </div>
 
       <div class="card-show">
-        <h3>Meeting status</h3>
           <% if @booking.status == "pending" %>
-            <p id="status-pending">Pending</p>
+            <h1><div class="status-pending">
+            Your meeting is pending validation
+            </div>
           <% elsif @booking.status == "accepted"%>
-            <p id="status-valid">Accepted</p>
+            <p id="status-valid">Your meeting is accepted</p>
           <% else %>
-            <p id="status-canceled"> Canceled</p>
+            <p id="status-canceled">This meeting was canceled</p>
           <% end %>
+          </h1>
       </div>
 
 
@@ -31,7 +33,7 @@
         <h3>Meeting details</h3>
         <p>Start: <%= "#{start_date[3]} / #{start_date[2]} / #{start_date[1]} " %>
         End: <%= "#{end_date[3]} / #{end_date[2]} / #{end_date[1]} " %></p>
-        <p> Price is: <%= @booking.grandma.price %> euros / hour</p>
+        <p id="price"> Price is: <%= @booking.grandma.price %> euros / hour</p>
       </div>
 
       <div class="card-show">
