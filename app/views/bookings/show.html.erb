@@ -15,5 +15,17 @@
       <li>Cooking: <%= @booking.grandma.cooking %></li>
       <li>Price is: <%= @booking.grandma.price %> euros / hour</li>
     </ul>
+
+    <div>
+      <%= link_to "Confirm", update_booking_path(@booking.id, true), method: :put, class: "btn btn-success" %>
+    </div>
+    <div>
+      <%= link_to "Decline", update_booking_path(@booking.id, false), data: {confirm: 'Are you sure?'}, method: :put, class: "btn btn-danger" %>
+    </div>
+
   </div>
 </div>
+
+<% if @booking.status == "pending" && current_user.user_type == "Grandma" %>
+<p>status en pending ET je suis la grandma, j'ai le droit aux boutons</p>
+<% end %>
