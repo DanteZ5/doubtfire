@@ -1,39 +1,16 @@
-.match {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-around !important;
-}
-
-.match img {
-   width: 200px;
-  height: 200px;
-  border: 3px solid #cccccc;
-  border-radius: 50%;
-}
-
-.match-element {
-  flex: 0 0 auto;
-}
-
-#status-pending {
-  border: 1px solid;
-  border-color: #EF7E56
-  padding: 10px 40px;
-  border-radius: 40px;
-  opacity: 0.9;
-  margin: 10px;
+.status-pending {
+ color: #EF7E56;
 }
 
 #status-valid {
-  border-color: #17b978;
-  padding: 10px 40px;
-  border-radius: 40px;
-  opacity: 0.9;
+  color: #17b978;
 }
 
 #status-canceled {
-  border-color: #dd3e3e;
-  padding: 10px 40px;
-  border-radius: 40px;
-  opacity: 0.9;
+  color: #dd3e3e;
+
+}
+
+#price {
+  opacity: 0.6;
 }
