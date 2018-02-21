@@ -10,12 +10,12 @@
                 <div class="grandma-title">
                   <h2><%= booking.user.first_name %></h2>
 
-                     <% if booking.status == "pending" %>
-                        <p><div class="status-pending">Pending meeting</div></p>
+                     <% if booking.status == "declined" %>
+                        <p><div class="status-canceled">Meeting canceled</div></p>
                       <% elsif booking.status == "validate"%>
                         <p><div class="status-valid">Meeting accepted</div></p>
                       <% else %>
-                        <p><div class="status-canceled">Meeting canceled</div></p>
+                       <p><div class="status-pending">Pending meeting</div></p>
                       <% end %>
                   <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id), class:"card-link" %>
                 </div>
@@ -26,14 +26,13 @@
               <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.grandma.user.photo %>')">
                 <div class="grandma-title">
                   <h2><%= booking.user.first_name %></h2>
-                      <% if booking.status == "pending" %>
-                        <p><div class="status-pending">Pending meeting</div>
+                      <% if booking.status == "declined" %>
+                        <p><div class="status-canceled">Meeting canceled</div></p>
                       <% elsif booking.status == "validate"%>
-                        <p id="status-valid">Meeting accepted</p>
+                        <p><div class="status-valid">Meeting accepted</div></p>
                       <% else %>
-                        <p id="status-canceled">Meeting canceled</p>
+                       <p><div class="status-pending">Pending meeting</div></p>
                       <% end %>
-                      </p>
                   <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id), class:"card-link" %>
                 </div>
               </div>
