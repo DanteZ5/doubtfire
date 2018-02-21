@@ -4,8 +4,8 @@
       <%= image_tag @grandma.user.photo, id:"img-profile", style: "object-fit: cover;" %>
         <h1><%= @grandma.user.first_name %></h1>
         <h2>She is <%= @grandma.user.age %> years old and lives in <%= @grandma.user.address %></h2>
-        <% if @current_user == @grandma %>
-          <%= link_to "Edit your profile", edit_grandma_path(@grandma), class: "btn btn-primary" %>
+        <% if @current_user == @grandma.user %>
+          <%= link_to "Edit your profile", edit_grandma_path(@grandma), class: "btn btn-classic" %>
         <% end %>
 
     </div>
@@ -14,7 +14,9 @@
     <div class="card-show">
       <h3>More about <%= @grandma.user.first_name %></h3>
       <p id="grandma-description"><%=  @grandma.user.description%></p>
-      <%= link_to "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %>
+        <% if @current_user != @grandma.user %>
+          <%= link_to "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %>
+        <% end %>
 
     </div>
 
