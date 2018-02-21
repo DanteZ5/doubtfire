@@ -5,6 +5,6 @@ class Booking < ApplicationRecord
 
 
   def default_values
-    self.status ||= 'Pending'
+    self.status ||= 'pending'
   end
 end
