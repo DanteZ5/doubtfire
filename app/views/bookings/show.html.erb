@@ -17,10 +17,10 @@
     </ul>
 
     <div>
-      <%= link_to "Confirm", update_booking_path(@booking.id, true), method: :put, class: "btn btn-success" %>
+      <%= link_to "Confirm", update_booking_path(@booking.id, true), method: :put, class: "btn-confirm" %>
     </div>
     <div>
-      <%= link_to "Decline", update_booking_path(@booking.id, false), data: {confirm: 'Are you sure?'}, method: :put, class: "btn btn-danger" %>
+      <%= link_to "Decline", update_booking_path(@booking.id, false), data: {confirm: 'Are you sure?'}, method: :put, class: "btn-decline" %>
     </div>
 
   </div>
