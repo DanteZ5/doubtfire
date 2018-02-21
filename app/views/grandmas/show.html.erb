@@ -1,18 +1,22 @@
 <div class="container">
   <div class="main-container">
     <div class="card-show">
-      <%= image_tag @grandma.user.photo, id:"img-profile" %>
+      <%= image_tag @grandma.user.photo, id:"img-profile", style: "object-fit: cover;" %>
         <h1><%= @grandma.user.first_name %></h1>
         <h2><%= @grandma.user.age %> <%= @grandma.user.address %></h2>
+        <% if @current_user == @grandma %>
+          <%= link_to "Edit your profile", edit_grandma_path(@grandma), class: "btn btn-primary" %>
+        <% else %>
+          <%= link_to "Contact #{@grandma.user.first_name}", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %>
+        <% end %>
+
     </div>
 
 
     <div class="card-show">
       <h3>More about <%= @grandma.user.first_name %></h3>
       <p> <%= @grandma.price %>€/hour</p>
-        <%= link_to "Edit", edit_grandma_path(@grandma), class: "btn btn-primary" %>
     </div>
-
 
     <div class="card-show">
       <h3> <%= @grandma.user.first_name %> is available for</h3>
