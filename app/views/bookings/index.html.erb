@@ -5,7 +5,7 @@
       <div class="row">
         <% @bookings.each do |booking| %>
           <div class="col-xs-12 col-sm-3 col-md-4">
-            <% if booking.user.photo %>
+            <% if current_user.user_type == "Grandma" %>
               <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.user.photo %>')">
                 <div class="grandma-title">
                   <h2><%= booking.user.first_name %></h2>
@@ -23,7 +23,7 @@
 
                   <% else  %>
 
-              <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
+              <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.grandma.user.photo %>')">
                 <div class="grandma-title">
                   <h2><%= booking.user.first_name %></h2>
                       <% if booking.status == "pending" %>
@@ -37,7 +37,6 @@
                   <%= link_to "", grandma_booking_path(booking.grandma.user.id, booking.id), class:"card-link" %>
                 </div>
               </div>
-
             <% end %>
           </div>
         <% end %>
