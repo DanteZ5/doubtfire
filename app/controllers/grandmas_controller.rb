@@ -3,6 +3,18 @@ class GrandmasController < ApplicationController
 
   def index
     @grandmas = policy_scope(Grandma)
+
+    # @grandmas = Grandma.joins(:user).merge(User.where(latitude: nil))
+
+
+    @markers = @grandmas.each do |grandma|
+      {
+        lat: grandma.user.latitude,
+        lng: grandma.user.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
+
   end
 
   def new
