@@ -3,7 +3,7 @@
     <h1 class='roboto'>Booking</h1>
     <% start_date = eval(@booking.start_date) %>
     <% end_date = eval(@booking.end_date) %>
-    <ul>
+    <ul class="list-unstyled">
       <li>Status: <%= @booking.status %></li>
       <li>Start: <%= "#{start_date[3]} / #{start_date[2]} / #{start_date[1]} " %></li>
       <li>End: <%= "#{end_date[3]} / #{end_date[2]} / #{end_date[1]} " %></li>
@@ -15,17 +15,13 @@
       <li>Cooking: <%= @booking.grandma.cooking %></li>
       <li>Price is: <%= @booking.grandma.price %> euros / hour</li>
     </ul>
-
-    <div>
-      <%= link_to "Confirm", update_booking_path(@booking.id, true), method: :put, class: "btn-confirm" %>
-    </div>
-    <div>
-      <%= link_to "Decline", update_booking_path(@booking.id, false), data: {confirm: 'Are you sure?'}, method: :put, class: "btn-decline" %>
-    </div>
-
+    <% if @booking.status == "pending" && current_user.user_type == "Grandma" %>
+    <p>status en pending ET je suis la grandma, j'ai le droit aux boutons</p>
+    <%= link_to "Confirm", update_booking_path(@booking.id, true), method: :put,
+    class: "btn-confirm" %>
+    <%= link_to "Decline", update_booking_path(@booking.id, false),
+    data: {confirm: 'Are you sure?'}, method: :put, class: "btn-decline" %>
+    <% end %>
   </div>
 </div>
 
-<% if @booking.status == "pending" && current_user.user_type == "Grandma" %>
-<p>status en pending ET je suis la grandma, j'ai le droit aux boutons</p>
-<% end %>
