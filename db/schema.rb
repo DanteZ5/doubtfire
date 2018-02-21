@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219160304) do
+ActiveRecord::Schema.define(version: 20180220164940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20180219160304) do
   end
 
   create_table "grandmas", force: :cascade do |t|
-    t.boolean "baby_sitting"
-    t.boolean "cooking"
-    t.boolean "knitting"
-    t.boolean "pet_sitting"
+    t.boolean "baby_sitting", default: false
+    t.boolean "cooking", default: false
+    t.boolean "knitting", default: false
+    t.boolean "pet_sitting", default: false
     t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false

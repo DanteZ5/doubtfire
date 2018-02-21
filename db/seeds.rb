@@ -25,6 +25,12 @@ users_attributes = [
   address:'Montpellier',
   photo: "https://travisbarbour.files.wordpress.com/2013/04/grandma-cover.jpg" }
 ]
+
+# raymonde est user avec
+# francoise est grandma
+# jacqueline est grandma avec
+# yvette est user
+
 users = User.create!(users_attributes)
 
 grandma_attributes = [

@@ -7,7 +7,7 @@
       <%= f.input :email, required: true, autofocus: true %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true %>
-      <%= f.input :user_type, required: true, collection: User::USER_TYPES %>
+      <%= f.input :user_type, required: true, selected: "Grandma", collection: User::USER_TYPES %>
       <%= f.input :username %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
@@ -15,7 +15,7 @@
       <%= f.input :address %>
       <%= f.input :review %>
       <%= f.input :description %>
-      <%= f.button :submit, "Create my account", class:'btn btn-primary' %>
+      <%= f.button :submit, "Create my account", class:'btn-classic' %>
     </div>
   <% end %>
   </div>

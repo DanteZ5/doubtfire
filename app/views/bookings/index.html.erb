@@ -1,8 +1,8 @@
-<h1>index de bookings</h1>
+<h1>index de bookings / user</h1>
 
 <% @bookings.each do |booking| %>
-  <p>ID: <%= booking.id %></p>
+  <p>ID: <%= link_to booking.id, grandma_booking_path(booking.grandma.user.id, booking.id)  %></p>
   <p>Status: <%= booking.status %></p>
-  <p>User: <%= booking.user.email %></p>
-  <p>Grandma: <%= booking.grandma.user.email %></p>
+  <p>User: <%= booking.user.id %></p>
+  <p>Grandma: <%= booking.grandma.user.id %></p>
 <% end %>
