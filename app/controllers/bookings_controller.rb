@@ -45,7 +45,7 @@ class BookingsController < ApplicationController
     authorize @booking
     accepted = eval(params[:format])
     if accepted
-      @booking.update(status: "accepted")
+      @booking.update(status: "validate")
     else
       @booking.update(status: "declined")
     end
