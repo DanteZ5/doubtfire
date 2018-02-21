@@ -17,14 +17,14 @@
 
       <div class="card-show">
         <h3>Meeting status</h3>
-          <% if @booking.status == "pending" %>
-            <h1><div class="status-pending">
-            Your meeting is pending validation
+          <% if @booking.status == "canceled" %>
+            <h1><div class="status-candeled">
+            This meeting was canceled
             </div></h1>
           <% elsif @booking.status == "validate"%>
             <h1><div class="status-valid">Your meeting is accepted</div></h1>
           <% else %>
-            <h1><div class="status-canceled">This meeting was canceled</div></h1>
+            <h1><div class="status-pending">Your meeting is pending validation</div></h1>
           <% end %>
       </div>
 
