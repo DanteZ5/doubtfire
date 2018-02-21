@@ -17,8 +17,8 @@
 
       <div class="card-show">
         <h3>Meeting status</h3>
-          <% if @booking.status == "canceled" %>
-            <h1><div class="status-candeled">
+          <% if @booking.status == "declined" %>
+            <h1><div class="status-canceled">
             This meeting was canceled
             </div></h1>
           <% elsif @booking.status == "validate"%>
