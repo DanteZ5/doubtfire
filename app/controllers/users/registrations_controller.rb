@@ -56,7 +56,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       return new_grandma_path
       flash.keep(:notice)
     else
-      return root_path
+      return request.referrer
     end
   end
 
