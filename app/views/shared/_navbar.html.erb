@@ -11,7 +11,7 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= cl_image_tag current_user.photo, style: "width: 70px; height: 70px;", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", 'data-toggle':"dropdown" %>
+        <%= cl_image_tag current_user.photo, style: "width: 60px; height: 60px; object-fit: cover", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", 'data-toggle':"dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Profile", edit_user_registration_path %></li>
             <% if current_user.user_type == "Grandma" %>
