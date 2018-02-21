@@ -3,11 +3,9 @@
     <div class="card-show">
       <%= image_tag @grandma.user.photo, id:"img-profile", style: "object-fit: cover;" %>
         <h1><%= @grandma.user.first_name %></h1>
-        <h2><%= @grandma.user.age %> <%= @grandma.user.address %></h2>
+        <h2>She is <%= @grandma.user.age %> years old and lives in <%= @grandma.user.address %></h2>
         <% if @current_user == @grandma %>
           <%= link_to "Edit your profile", edit_grandma_path(@grandma), class: "btn btn-primary" %>
-        <% else %>
-          <%= link_to "Contact #{@grandma.user.first_name}", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %>
         <% end %>
 
     </div>
@@ -15,16 +13,18 @@
 
     <div class="card-show">
       <h3>More about <%= @grandma.user.first_name %></h3>
-      <p> <%= @grandma.price %>€/hour</p>
+      <p id="grandma-description"><%=  @grandma.user.description%></p>
+      <%= link_to "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %>
+
     </div>
 
     <div class="card-show">
       <h3> <%= @grandma.user.first_name %> is available for</h3>
-
+      <div id="activity">
         <% if @grandma.knitting %>
           <div class="row">
             <div class="polaroid">
-              <%= image_tag 'activities/knitting.jpg', class: "polaroid"%>
+              <%= image_tag 'activities/knitting.jpg' %>
               <p>Knitting</p>
             </div>
         <% end %>
@@ -41,18 +41,19 @@
         <% if @grandma.baby_sitting %>
           <div class="row">
             <div class="polaroid">
-              <%= image_tag 'activities/babysitting.jpg', class: "polaroid" %>
+              <%= image_tag 'activities/babysitting.jpg' %>
               <p>Baby-Sitting</p>
             </div>
         <% end %>
 
           <% if @grandma.pet_sitting %>
             <div class="polaroid">
-              <%= image_tag 'activities/dogsit.jpg', class: "polaroid" %>
+              <%= image_tag 'activities/dogsit.jpg' %>
               <p>Pet-Sitting</p>
             </div>
           <% end %>
           </div>
+      </div>
     </div>
 
   </div>
