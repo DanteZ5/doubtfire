@@ -1,0 +1,64 @@
+.main-container {
+  display: block;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+
+#img-profile {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #cccccc;
+    border-radius: 50%;
+
+}
+
+.card-show {
+    background: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-show h1 {
+  font-size: 30px;
+}
+
+.card-show h2 {
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.card-show h3 {
+  font-size: 24px;
+  color: #EF7E56;
+  text-align: left;
+}
+
+
+.polaroid {
+  position: relative;
+  max-width: 275px;
+}
+
+.polaroid img {
+  margin-left: 5px;
+  width: 275px;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Lato';
+  color: black;
+}

@@ -1,10 +1,55 @@
-<h1>Grandmas#show</h1>
-<p>Find me in app/views/grandmas/show.html.erb</p>
-<h1> <%= @grandma.user.email %> </h1>
-<p> <%= @grandma.price %>€/hour</p>
-<p> Knitting: <%= @grandma.knitting %></p>
-<p> Cooking: <%= @grandma.cooking %></p>
-<p> Baby sitting: <%= @grandma.baby_sitting %></p>
-<p> Pet sitting: <%= @grandma.pet_sitting %></p>
-<%= link_to "Edit", edit_grandma_path(@grandma), class: "btn btn-primary" %>
-<%= link_to "sign out", root_path, class: "btn btn-primary"  %>
+<div class="container">
+  <div class="main-container">
+    <div class="card-show">
+      <%= image_tag @grandma.user.photo, id:"img-profile" %>
+        <h1><%= @grandma.user.first_name %></h1>
+        <h2><%= @grandma.user.age %> <%= @grandma.user.address %></h2>
+    </div>
+
+
+    <div class="card-show">
+      <h3>More about <%= @grandma.user.first_name %></h3>
+      <p> <%= @grandma.price %>€/hour</p>
+        <%= link_to "Edit", edit_grandma_path(@grandma), class: "btn btn-primary" %>
+    </div>
+
+
+    <div class="card-show">
+      <h3> <%= @grandma.user.first_name %> is available for</h3>
+
+        <% if @grandma.knitting %>
+          <div class="row">
+            <div class="polaroid">
+              <%= image_tag 'activities/knitting.jpg', class: "polaroid"%>
+              <p>Knitting</p>
+            </div>
+        <% end %>
+
+        <% if @grandma.cooking %>
+            <div class="polaroid">
+              <%= image_tag 'activities/cooking.jpg', alt: "Cooking" %>
+              <p>Cooking</p>
+            </div>
+          </div>
+        <% end %>
+
+
+        <% if @grandma.baby_sitting %>
+          <div class="row">
+            <div class="polaroid">
+              <%= image_tag 'activities/babysitting.jpg', class: "polaroid" %>
+              <p>Baby-Sitting</p>
+            </div>
+        <% end %>
+
+          <% if @grandma.pet_sitting %>
+            <div class="polaroid">
+              <%= image_tag 'activities/dogsit.jpg', class: "polaroid" %>
+              <p>Pet-Sitting</p>
+            </div>
+          <% end %>
+          </div>
+    </div>
+
+  </div>
+</div>
