@@ -25,7 +25,7 @@
 
               <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.grandma.user.photo %>')">
                 <div class="grandma-title">
-                  <h2><%= booking.user.first_name %></h2>
+                  <h2><%= booking.grandma.user.first_name %></h2>
                       <% if booking.status == "declined" %>
                         <p><div class="status-canceled">Meeting canceled</div></p>
                       <% elsif booking.status == "validate"%>
