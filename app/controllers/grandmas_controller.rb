@@ -3,6 +3,7 @@ class GrandmasController < ApplicationController
 
   def index
     @grandmas = policy_scope(Grandma)
+    @grandmas = Grandma.global_search(params[:query]) if params[:query].present?
   end
 
   def new
