@@ -12,6 +12,7 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem 'pg_search'
 gem "geocoder"
+gem 'faker'
 
 
 gem 'autoprefixer-rails'
