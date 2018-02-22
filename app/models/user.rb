@@ -9,14 +9,14 @@ class User < ApplicationRecord
 
   USER_TYPES = ["Grandma", "Customer"]
 
-  def grandmaid
+  def findgrandma
     grandmas = Grandma.all
-    grandma_id = nil
+    find_grandma = nil
     grandmas.each do |grandma|
-      if grandma.user == current_user
-        grandma_id = grandma.id
+      if grandma.user == self
+        find_grandma = Grandma.find(grandma.id)
       end
     end
-    return grandma_id
+    return find_grandma
   end
 end

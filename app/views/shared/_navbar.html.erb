@@ -15,14 +15,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Profile", edit_user_registration_path %></li>
             <% if current_user.user_type == "Grandma" %>
-              <% grandma_id = 0 %>
-              <% grandmas = Grandma.all %>
-              <% grandmas.each do |grandma| %>
-                <% if grandma.user == current_user  %>
-                  <% grandma_id = grandma.id %>
-                <% end %>
-              <% end %>
-          <li><%= link_to "Edit Grandma", edit_grandma_path(grandma_id) %></li>
+          <li><%= link_to "Edit Grandma", edit_grandma_path(current_user.findgrandma.id) %></li>
           <% end %>
           <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
         </ul>
