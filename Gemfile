@@ -10,7 +10,9 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
+gem 'pg_search'
 gem "geocoder"
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

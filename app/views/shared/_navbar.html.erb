@@ -4,6 +4,16 @@
     <%= image_tag("doubtfire_logo_white.png") %>
   </a>
 
+  <div>
+    <%= form_tag grandmas_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Grandma"
+      %>
+    <% end %>
+  </div>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <a href="/grandmas/#grandma-cards" class= "navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
