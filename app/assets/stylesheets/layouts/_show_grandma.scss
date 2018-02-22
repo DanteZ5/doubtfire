@@ -11,7 +11,13 @@
     height: 200px;
     border: 3px solid #cccccc;
     border-radius: 50%;
+}
 
+#img-profile-preview {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #cccccc;
+    border-radius: 50%;
 }
 
 .card-show {
@@ -20,6 +26,12 @@
     margin-bottom: 5px;
     border-radius: 4px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card-show-preview {
+    text-align: center;
+    background: white;
+    padding-left: 20px;
 }
 
 #activity {
