@@ -3,7 +3,7 @@ class GrandmasController < ApplicationController
 
   def index
     @grandmas = policy_scope(Grandma)
-    @grandmas = Grandma.global_search(params[:query]) if params[:query].present?
+    @grandmas = @grandmas.global_search(params[:query]) if params[:query].present?
     @grandmas = @grandmas.where.not(latitude: nil, longitude: nil)
     @markers = @grandmas.map do |grandma|
       {
