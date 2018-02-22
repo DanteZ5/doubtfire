@@ -7,13 +7,14 @@
         <% if @current_user == @grandma %>
           <%= link_to "Edit your profile", edit_grandma_path(@grandma), class: "btn btn-primary" %>
         <% end %>
-
     </div>
 
 
     <div class="card-show">
       <h3>More about <%= @grandma.user.first_name %></h3>
       <p id="grandma-description"><%=  @grandma.user.description%></p>
+      <%= link_to "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %>
+
        <h3>Raymonde's ratings</h3>
        <p> <% @grandma.user.review.times do  %>
       <span class="glyphicon glyphicon-star"></span>
