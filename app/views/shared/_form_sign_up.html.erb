@@ -1,25 +1,27 @@
-  <div class="col-md-12">
-<div class="tcontainer">
-  <iframe src="https://giphy.com/embed/XYot661SFS62c" max-width="480" max-height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
-    <h2>Sign up</h2>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
-      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, required: true %>
-      <%= f.input :user_type, required: true, selected: "Grandma", collection: User::USER_TYPES %>
-      <%= f.input :username %>
-      <%= f.input :photo%>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :age %>
-      <%= f.input :address %>
-      <%= f.input :review %>
-      <%= f.input :description %>
-      <%= f.button :submit, "Create my account", class:'btn-classic' %>
+<div class="col-md-12">
+  <div class="tcontainer">
+    <iframe src="https://giphy.com/embed/XYot661SFS62c" max-width="480" max-height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      <div class="form-group">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <div class="row">
+            <div class="col-md-8 col-xs-offset-2">
+              <%= f.error_notification %>
+              <%= f.input :email, required: true, autofocus: true %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+              <%= f.input :password_confirmation, required: true %>
+              <%= f.input :first_name %>
+              <%= f.input :user_type, required: true, selected: "Grandma", collection: User::USER_TYPES %>
+              <%= f.input :photo%>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :age %>
+              <%= f.input :address %>
+              <%= f.input :description %>
+              <%= f.button :submit, "Create my account", class:'btn-classic' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
 </div>
