@@ -22,7 +22,7 @@ users_attributes = [
   remote_photo_url: "http://www.digitaljournal.com/img/5/6/2/4/4/2/i/8/6/8/o/Grandma_37.JPG",
   age: 78 },
 { email: 'francoise@wanadoo.fr', password: '123456', first_name: 'Françoise',
-  address:'Bourg Palette', user_type: "Grandma", last_name: "Dugenoux", review: 5,
+  address:'Nanterre', user_type: "Grandma", last_name: "Dugenoux", review: 5,
   description: "Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
   De quibus tres video sententias ferri, quarum nullam probo, unam,
   ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram,
