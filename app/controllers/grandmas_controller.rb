@@ -9,7 +9,7 @@ class GrandmasController < ApplicationController
       {
         lat: grandma.latitude,
         lng: grandma.longitude,
-        infoWindow: { content: render_to_string(partial: "grandma_box", locals: { grandma: grandma }) }
+        infoWindow: { content: render_to_string(partial: "grandma_box", locals: { grandma: grandma, current_user: current_user }) }
       }
     end
   end

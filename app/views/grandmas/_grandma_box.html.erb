@@ -1,1 +1,13 @@
-<%= link_to grandma.user.first_name, grandma_path(grandma)  %>
+<!-- <h3>coucou</h3> -->
+
+<!-- <h1><%= link_to grandma.user.first_name, grandma_path(grandma)  %></h1>
+<li><%= link_to grandma.user.address, grandma_path(grandma)  %></li> -->
+
+<div class="card-show-preview">
+      <%= image_tag grandma.user.photo, id:"img-profile-preview", style: "object-fit: cover;" %>
+        <h3><%= link_to grandma.user.first_name, grandma_path(grandma)  %></h3>
+        <p>She is <%= grandma.user.age %> years old and lives in <%= grandma.user.address %></p>
+        <% if current_user == grandma %>
+          <%= link_to "Edit your profile", edit_grandma_path(grandma), class: "btn btn-primary" %>
+        <% end %>
+    </div>
