@@ -2,7 +2,33 @@
 
   <% start_date = @booking.start_date.split('-') %>
   <% end_date = @booking.end_date.split('-') %>
+
     <div class="main-container">
+
+    <!-- systeme de vote / Dante -->
+    <% if (current_user == @booking.user && @booking.status == "validate")%>
+      <div class="card-show">
+        <h3>rate <%= @booking.grandma.user.first_name %></h3>
+        <%= link_to update_booking_path(@booking.id, note: 1), method: :put do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+        <%= link_to update_booking_path(@booking.id, note: 2), method: :put do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+        <%= link_to update_booking_path(@booking.id, note: 3), method: :put do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+        <%= link_to update_booking_path(@booking.id, note: 4), method: :put do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+        <%= link_to update_booking_path(@booking.id, note: 5), method: :put do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+
+      </div>
+    <% end %>
+    <!-- fin du systeme de vote / Dante-->
+
       <div class="card-show" style="padding-bottom: 30px;">
           <%= image_tag @booking.grandma.user.photo, id:"img-profile", style: "object-fit: cover;" %>
           <%= image_tag @booking.user.photo, id:"img-profile", style: "object-fit: cover;" %>

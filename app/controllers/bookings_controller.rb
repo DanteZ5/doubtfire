@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     booli = false
     grandmas.each do |grandma|
       if grandma.user == current_user
-        @bookings = grandma.bookings
+        @bookings = grandma.bookings.order(created_at: :desc)
         booli = true
       end
     end
@@ -44,13 +44,23 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     authorize @booking
-    accepted = eval(params[:format])
-    if accepted
-      @booking.update(status: "validate")
-    else
-      @booking.update(status: "declined")
+
+    # systeme de validation
+    unless params[:format].nil?
+      accepted = eval(params[:format])
+      if accepted
+        @booking.update(status: "validate")
+      else
+        @booking.update(status: "declined")
+      end
+      redirect_to grandma_booking_path(@booking.grandma.id, @booking.id)
     end
-    redirect_to grandma_booking_path(@booking.grandma.id, @booking.id)
+
+    # systeme de vote
+    unless params[:note].nil?
+     @booking.grandma.user.update(review: params[:note].to_i)
+     redirect_to grandma_path(@booking.grandma.id)
+    end
   end
 
   private
