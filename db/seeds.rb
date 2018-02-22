@@ -22,7 +22,7 @@ users_attributes = [
   remote_photo_url: "http://www.digitaljournal.com/img/5/6/2/4/4/2/i/8/6/8/o/Grandma_37.JPG",
   age: 78 },
 { email: 'francoise@wanadoo.fr', password: '123456', first_name: 'Françoise',
-  address:'Nanterre', user_type: "Grandma", last_name: "Dugenoux", review: 5,
+  address:'Rennes', user_type: "Grandma", last_name: "Dugenoux", review: 5,
   description: "Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
   De quibus tres video sententias ferri, quarum nullam probo, unam,
   ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram,
@@ -31,7 +31,7 @@ users_attributes = [
   remote_photo_url: "https://az616578.vo.msecnd.net/files/2016/03/18/635939287221105035-638973208_grandma17.jpg",
   age: 76 },
 { email: 'jacqueline@wanadoo.fr', password: '123456', first_name: 'Jacqueline',
-  address:'Nantes', user_type: "Grandma", last_name: "Dugenoux", review: 3,
+  address:'Rennes', user_type: "Grandma", last_name: "Dugenoux", review: 3,
   description: "Haec et huius modi quaedam innumerabilia ultrix facinorum impiorum
   bonorumque praemiatrix aliquotiens operatur Adrastia atque utinam semper quam vocabulo
   duplici etiam Nemesim appellamus: ius quoddam sublime numinis efficacis,
