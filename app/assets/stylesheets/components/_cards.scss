@@ -24,10 +24,12 @@
 }
 // grandma name
 .grandma-title h2 {
+  color: #F9F9F9;
   font-size: 28px;
 }
 // grandma city
 .grandma-title p {
+  color: #F9F9F9;
   font-size: 18px;
   opacity: 0.7;
   font-weight: lighter;
@@ -50,4 +52,7 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+.activities-display {
+  margin: 0px 5px 0px 5px;
 }

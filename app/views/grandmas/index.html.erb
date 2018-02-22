@@ -46,6 +46,18 @@
             <div class="grandma-title">
               <h2><%= grandma.user.first_name %></h2>
               <p><%= grandma.user.address %></p>
+              <% if grandma.cooking %>
+                <i class="fas fa-utensils"></i>
+                <% end %>
+              <% if grandma.baby_sitting %>
+                <i class="fas fa-child""></i>
+                <% end %>
+              <% if grandma.pet_sitting %>
+                <i class="fas fa-paw"></i>
+                <% end %>
+              <% if grandma.knitting %>
+                <i class="fas fa-hand-scissors"></i>
+                <% end %>
               <%= link_to "", grandma_path(grandma), class:"card-link" %>
             </div>
           </div>

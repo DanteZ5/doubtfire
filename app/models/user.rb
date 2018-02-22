@@ -8,4 +8,15 @@ class User < ApplicationRecord
   has_many :bookings
 
   USER_TYPES = ["Grandma", "Customer"]
+
+  def findgrandma
+    grandmas = Grandma.all
+    find_grandma = nil
+    grandmas.each do |grandma|
+      if grandma.user == self
+        find_grandma = Grandma.find(grandma.id)
+      end
+    end
+    return find_grandma
+  end
 end
