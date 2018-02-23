@@ -34,6 +34,8 @@ class GrandmasController < ApplicationController
   def show
     @grandma = Grandma.find(params[:id])
     authorize @grandma
+    @booking = Booking.new
+    authorize @booking
   end
 
   def edit

@@ -21,9 +21,20 @@
         <% blank_star.times do %>
        <span class="glyphicon glyphicon-star-empty"></span>
         <% end %></p>
-      <p><%= link_to "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %></p>
-    </div>
+        <button class="btn btn-classic" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%= "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour" %>
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+      <%= render 'bookings/form_booking', grandma: @grandma, booking: Booking.new %>
+  </div>
+</div>
+</div>
 <!-- TEST MODAL BOOKING -->
+
+
+
 
 <!-- FIN DU TEST MERCI -->
 <div class="card-show">
