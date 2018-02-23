@@ -1,21 +1,20 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <%= cl_image_tag("doubtfire_logo_white_160") %>
+    <%= cl_image_tag("doubtfire_logo_white_160", crop: :scale) %>
   </a>
 
-  <div>
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <div class="col-xs-5">
     <%= form_tag grandmas_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a Grandma"
+        placeholder: "Find a grandma"
       %>
     <% end %>
   </div>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
     <a href="/grandmas/#mission" class= "navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
     <%= link_to "YOUR BOOKINGS", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Profile picture with dropdown list -->

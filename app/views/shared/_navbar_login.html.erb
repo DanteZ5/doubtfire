@@ -4,18 +4,17 @@
     <img src="http://res.cloudinary.com/dn1aaoxvs/image/upload/v1519386843/doubtfire_logo_white_160.png" alt="logo">
   </a>
 
-  <div>
-    <%= form_tag grandmas_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Grandma"
-      %>
-    <% end %>
-  </div>
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <div class="col-xs-5">
+      <%= form_tag grandmas_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a grandma"
+        %>
+      <% end %>
+    </div>
     <a href="/grandmas/#mission" class= "navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
   <!-- Profile picture with dropdown list -->
      <%= link_to "LOGIN", "#", class: "navbar-wagon-item navbar-wagon-link", data: { toggle: 'modal', target: '.modal-sign_in'} %>
