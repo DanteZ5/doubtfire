@@ -25,9 +25,10 @@ class BookingsController < ApplicationController
 
   def create
     sleep 1.5
+
     @booking = Booking.new(booking_params)
     authorize @booking
-
+    @booking.grandma = Grandma.find(params[:grandma_id])
     # ameliore les champs de booking
     @booking.date = params[:booking][:date]
     @booking.start_hour = "#{params[:booking]["start_hour(4i)"]} : #{params[:booking]["start_hour(5i)"]}"
@@ -35,7 +36,6 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
 
     @booking.save
-
 
     redirect_to grandma_booking_path(@booking.grandma, @booking)
   end

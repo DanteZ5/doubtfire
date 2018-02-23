@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :grandmas, except: [:delete, :destroy] do
      resources :bookings, only: [:new, :show, :create]
   end
-  resources :bookings, only: :index
+  resources :bookings, only: [:index, :create]
   put 'bookings/:id', to: 'bookings#update', as: :update_booking
 
 
