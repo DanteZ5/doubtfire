@@ -90,14 +90,14 @@ grandmas = Grandma.create!(grandma_attributes)
 
 booking_attributes = [
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "validate",
-  start_date: "12/03/2018", end_date: "14/03/2018"  },
+  date: "2018-02-22", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "declined",
-  start_date: "15/03/2018", end_date: "17/05/2018"  },
+  date: "2018-02-20", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "pending",
-  start_date: "18/03/2018", end_date: "20/05/2018"  },
+  date: "2018-02-19", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.second.id, status: "pending",
-  start_date: "23/03/2018", end_date: "25/03/2018"  },
+  date: "2018-02-18", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.second.id, status: "pending",
-  start_date: "27/03/2018", end_date: "29/03/2018"  }
+  date: "2018-02-10", start_hour: "14 : 00", end_hour: "18 : 00" }
 ]
 bookings = Booking.create!(booking_attributes)

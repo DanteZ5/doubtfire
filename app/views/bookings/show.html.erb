@@ -1,9 +1,8 @@
 <div class="container">
 
     <div class="main-container">
-    <% raise %>
     <!-- systeme de vote / Dante -->
-    <% if (current_user == @booking.user && @booking.status == "validate") && Time.now < @end_booking %>
+    <% if (current_user == @booking.user && @booking.status == "validate" && Time.now > @end_booking) %>
       <div class="card-show">
         <h3>rate <%= @booking.grandma.user.first_name %></h3>
         <%= link_to update_booking_path(@booking.id, note: 1), method: :put do %>
