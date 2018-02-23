@@ -7,23 +7,14 @@
 
     <!-- systeme de vote / Dante -->
     <% if (current_user == @booking.user && @booking.status == "validate")%>
-      <div class="card-show">
+      <div class="card-show", id="rating">
         <h3>rate <%= @booking.grandma.user.first_name %></h3>
-        <%= link_to update_booking_path(@booking.id, note: 1), method: :put do %>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <% end %>
-        <%= link_to update_booking_path(@booking.id, note: 2), method: :put do %>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <% end %>
-        <%= link_to update_booking_path(@booking.id, note: 3), method: :put do %>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <% end %>
-        <%= link_to update_booking_path(@booking.id, note: 4), method: :put do %>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <% end %>
-        <%= link_to update_booking_path(@booking.id, note: 5), method: :put do %>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <% end %>
+        <span data-url="<%= rate_booking_url(@booking.id, note: 5) %>" data-rating>☆</span>
+        <span data-url="<%= rate_booking_url(@booking.id, note: 4) %>" data-rating>☆</span>
+        <span data-url="<%= rate_booking_url(@booking.id, note: 3) %>" data-rating>☆</span>
+        <span data-url="<%= rate_booking_url(@booking.id, note: 2) %>" data-rating>☆</span>
+        <span data-url="<%= rate_booking_url(@booking.id, note: 1) %>" data-rating>☆</span>
+
 
       </div>
     <% end %>

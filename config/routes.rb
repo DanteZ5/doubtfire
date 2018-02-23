@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: :index
   put 'bookings/:id', to: 'bookings#update', as: :update_booking
+  get 'bookings/:id/rate', to: 'bookings#rate', as: :rate_booking
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

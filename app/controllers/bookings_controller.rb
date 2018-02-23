@@ -63,6 +63,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def rate
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    unless params[:note].nil?
+     @booking.grandma.user.update(review: params[:note].to_i)
+     redirect_to grandma_path(@booking.grandma.id)
+    end
+  end
+
   private
 
   def booking_params
