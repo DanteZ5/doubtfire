@@ -25,9 +25,12 @@
     </div>
 <!-- TEST MODAL BOOKING -->
 
-
-
 <!-- FIN DU TEST MERCI -->
+<div class="card-show">
+   <h3> Where is <%=@grandma.user.first_name %>?</h3>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@grandma.user.address}&size=600x300&maptype=roadmap&key=AIzaSyBSEhvUBg2TuRB2HeFaCxfsvJpr7_DQABM" %>
+</div>
+
     <div class="card-show">
       <h3> <%= @grandma.user.first_name %> is available for</h3>
       <div id="activity">
@@ -65,6 +68,6 @@
           </div>
       </div>
     </div>
-
   </div>
 </div>
+
