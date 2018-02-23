@@ -97,7 +97,7 @@ booking_attributes = [
   date: "2018-02-19", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "pending",
   date: "2018-02-18", start_hour: "14 : 00", end_hour: "18 : 00" },
-{ user_id: users.last.id, grandma_id: grandmas.first.id, status: "pending",
+{ user_id: users.last.id, grandma_id: grandmas.first.id, status: "validate",
   date: "2018-02-10", start_hour: "14 : 00", end_hour: "18 : 00" }
 ]
 bookings = Booking.create!(booking_attributes)
