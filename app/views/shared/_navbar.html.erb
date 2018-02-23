@@ -6,7 +6,7 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <div class="col-xs-5">
+       <div class="col-xs-4">
     <%= form_tag grandmas_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -14,7 +14,7 @@
         placeholder: "Find a grandma"
       %>
     <% end %>
-  </div>
+       </div>
     <a href="/grandmas/#mission" class= "navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
     <%= link_to "YOUR BOOKINGS", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Profile picture with dropdown list -->
