@@ -77,7 +77,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     unless params[:note].nil?
-     @booking.grandma.user.update(review: params[:note].to_i)
+     @booking.grandma.new_vote(params[:note].to_i)
      redirect_to grandma_path(@booking.grandma.id)
     end
   end
