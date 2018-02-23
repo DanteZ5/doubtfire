@@ -14,20 +14,35 @@
       <h3>More about <%= @grandma.user.first_name %></h3>
       <p id="grandma-description"><%=  @grandma.user.description%></p>
        <h3><%= @grandma.user.first_name %>'s ratings</h3>
+       <p><%= @grandma.count_notes %> meeting experiences</p>
        <p> <% @grandma.user.review.times do  %>
       <span class="glyphicon glyphicon-star"></span>
         <% end %>
-        <% blank_star = 5 - @grandma.user.review %>
+        <% blank_star = 5 - @grandma.average_note %>
         <% blank_star.times do %>
        <span class="glyphicon glyphicon-star-empty"></span>
         <% end %></p>
-      <p><%= link_to "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour", new_grandma_booking_path(@grandma), class: "btn btn-classic"  %></p>
-    </div>
+        <button class="btn btn-classic" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <%= "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour" %>
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+      <%= render 'bookings/form_booking', grandma: @grandma, booking: Booking.new %>
+  </div>
+</div>
+</div>
 <!-- TEST MODAL BOOKING -->
 
 
 
+
 <!-- FIN DU TEST MERCI -->
+<div class="card-show">
+   <h3> Where is <%=@grandma.user.first_name %>?</h3>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@grandma.user.address}&size=600x300&maptype=roadmap&key=AIzaSyBSEhvUBg2TuRB2HeFaCxfsvJpr7_DQABM" %>
+</div>
+
     <div class="card-show">
       <h3> <%= @grandma.user.first_name %> is available for</h3>
       <div id="activity">
@@ -65,6 +80,6 @@
           </div>
       </div>
     </div>
-
   </div>
 </div>
+

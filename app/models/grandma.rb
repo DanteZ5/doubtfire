@@ -5,6 +5,7 @@ class Grandma < ApplicationRecord
   validate :has_skill?
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  before_save :set_average_note
 
   def has_skill?
     :baby_sitting ||
@@ -15,6 +16,16 @@ class Grandma < ApplicationRecord
 
   def default_values
     self.address ||= self.user.address
+  end
+
+  def set_average_note
+    self.average_note = (self.sum_notes.to_f / self.count_notes).round ||= 5
+  end
+
+  def new_vote(rating)
+    self.sum_notes += rating
+    self.count_notes += 1
+    self.save
   end
 
   include PgSearch

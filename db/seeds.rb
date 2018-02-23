@@ -76,28 +76,28 @@ users_attributes = [
 users = User.create!(users_attributes)
 
 grandma_attributes = [
-{ user_id: users[0].id, price: 13, cooking: true },
-{ user_id: users[1].id, price: 13, cooking: true },
+{ user_id: users[0].id, price: 13, cooking: true, sum_notes: 20, count_notes: 5 },
+{ user_id: users[1].id, price: 13, cooking: true, sum_notes: 18, count_notes: 5  },
 { user_id: users[2].id, price: 15, knitting: true, cooking: true,
-  pet_sitting: true, baby_sitting: true },
-{ user_id: users[3].id, price: 15, knitting: true, cooking: true },
-{ user_id: users[4].id, price: 12, baby_sitting: true, cooking: true },
-{ user_id: users[5].id, price: 12, pet_sitting: true },
-{ user_id: users[6].id, price: 18, baby_sitting: true },
-{ user_id: users[7].id, price: 18, baby_sitting: true, pet_sitting: true },
+  pet_sitting: true, baby_sitting: true, sum_notes: 15, count_notes: 5  },
+{ user_id: users[3].id, price: 15, knitting: true, cooking: true, sum_notes: 22, count_notes: 5 },
+{ user_id: users[4].id, price: 12, baby_sitting: true, cooking: true, sum_notes: 10, count_notes: 5  },
+{ user_id: users[5].id, price: 12, pet_sitting: true, sum_notes: 14, count_notes: 5  },
+{ user_id: users[6].id, price: 18, baby_sitting: true, sum_notes: 19, count_notes: 5  },
+{ user_id: users[7].id, price: 18, baby_sitting: true, pet_sitting: true, sum_notes: 13, count_notes: 5 }
 ]
 grandmas = Grandma.create!(grandma_attributes)
 
 booking_attributes = [
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "validate",
-  start_date: "12/03/2018", end_date: "14/03/2018"  },
+  date: "2018-02-22", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "declined",
-  start_date: "15/03/2018", end_date: "17/05/2018"  },
+  date: "2018-02-20", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "pending",
-  start_date: "18/03/2018", end_date: "20/05/2018"  },
+  date: "2018-02-19", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.second.id, status: "pending",
-  start_date: "23/03/2018", end_date: "25/03/2018"  },
+  date: "2018-02-18", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.second.id, status: "pending",
-  start_date: "27/03/2018", end_date: "29/03/2018"  }
+  date: "2018-02-10", start_hour: "14 : 00", end_hour: "18 : 00" }
 ]
 bookings = Booking.create!(booking_attributes)

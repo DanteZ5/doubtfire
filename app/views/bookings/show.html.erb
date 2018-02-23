@@ -1,13 +1,10 @@
 <div class="container">
 
-  <% start_date = @booking.start_date.split('-') %>
-  <% end_date = @booking.end_date.split('-') %>
-
     <div class="main-container">
-
     <!-- systeme de vote / Dante -->
-    <% if (current_user == @booking.user && @booking.status == "validate")%>
+    <% if (current_user == @booking.user && @booking.status == "validate" && Time.now > @end_booking) %>
       <div class="card-show", id="rating">
+
         <h3>rate <%= @booking.grandma.user.first_name %></h3>
         <span data-url="<%= rate_booking_url(@booking.id, note: 5) %>" data-rating>☆</span>
         <span data-url="<%= rate_booking_url(@booking.id, note: 4) %>" data-rating>☆</span>
@@ -47,8 +44,10 @@
 
       <div class="card-show">
         <h3>Meeting details</h3>
-        <p><%= "Your meeting will start on #{start_date[2]} #{start_date[1]} #{start_date[0]}" %></p>
-        <p><%= "It will end on #{end_date[2]} #{end_date[1]} #{end_date[0]}" %></p>
+        <p><%= "Your meeting is scheduled on #{@booking.date}" %></p>
+        <p><%= "Start: #{@booking.start_hour}" %></p>
+        <p><%= "End: #{@booking.end_hour}" %></p>
+
         <p id:"price"> Price is: <%= @booking.grandma.price %> euros / hour</p>
       </div>
 

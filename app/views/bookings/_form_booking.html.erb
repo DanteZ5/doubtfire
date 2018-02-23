@@ -1,0 +1,8 @@
+<div class="container", style="margin: auto; width: 400px;">
+    <%= simple_form_for [grandma, booking] do |f| %>
+      <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, hint: 'Select a date' %>
+      <%= f.input :start_hour, as: :time, reject_date: :true, required: false %><%= f.input :end_hour, as: :time, required: false %>
+      <%= f.input :grandma_id, :as => :hidden, :input_html => { :value => params[:grandma_id] } %>
+      <%= f.submit "Book", class: "btn-classic", id: "sweet-alert" %>
+    <% end %>
+</div>
