@@ -60,7 +60,7 @@ users_attributes = [
 { email: 'nassim@gmail.com', password: '123456', first_name: 'Nassim',
   address:'Paris', user_type: "Customer", last_name: "Mezouar", review: 5,
   description: Faker::HowIMetYourMother.quote,
-  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/jbchenut",
+  remote_photo_url: "https://kitt.lewagon.com/placeholder/users/moneynass",
   age: 33 },
 { email: 'thibaud@gmail.com', password: '123456', first_name: 'Thibaud',
   address:'Paris', user_type: "Customer", last_name: "Vuitton", review: 5,
@@ -97,7 +97,7 @@ booking_attributes = [
   date: "2018-02-19", start_hour: "14 : 00", end_hour: "18 : 00" },
 { user_id: users.last.id, grandma_id: grandmas.first.id, status: "pending",
   date: "2018-02-18", start_hour: "14 : 00", end_hour: "18 : 00" },
-{ user_id: users.last.id, grandma_id: grandmas.first.id, status: "pending",
+{ user_id: users.last.id, grandma_id: grandmas.first.id, status: "validate",
   date: "2018-02-10", start_hour: "14 : 00", end_hour: "18 : 00" }
 ]
 bookings = Booking.create!(booking_attributes)
