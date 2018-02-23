@@ -1,125 +1,193 @@
-
 <div class="mission-text">
   <p class="underline">Besoin d'un coup de main en cuisine?</p>
 </div>
-<h4>Demandez à...</h4>
+
 <div class="grandma-cards">
   <div class="row">
-     <% @grandmas.each do |grandma| %>
-    <% if grandma.cooking %>
-     <div class="col-xs-12 col-sm-3 col-md-3">
-      <% if grandma.user.photo %>
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
-        <div class="grandma-title">
-          <h2><%= grandma.user.first_name %></h2>
-          <p><%= grandma.user.address %></p>
-          <% if grandma.cooking %>
-          <i class="fas fa-utensils activities-display"></i>
-          <% end %>
-          <% if grandma.baby_sitting %>
-          <i class="fas fa-child activities-display"></i>
-          <% end %>
-          <% if grandma.pet_sitting %>
-          <i class="fas fa-paw activities-display"></i>
-          <% end %>
-          <% if grandma.knitting %>
-          <i class="fas fa-cut activities-display"></i>
-          <% end %>
-          <%= link_to "", grandma_path(grandma), class:"card-link" %>
+    <div class="col-xs-12 col-sm-6 col-md-12">
+      <% @grandmas.each do |grandma| %>
+      <% if grandma.cooking %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <% if grandma.user.photo %>
+        <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
+          <div class="grandma-title">
+            <h2><%= grandma.user.first_name %></h2>
+            <p><%= grandma.user.address %></p>
+            <% if grandma.cooking %>
+            <i class="fas fa-utensils activities-display"></i>
+            <% end %>
+            <% if grandma.baby_sitting %>
+            <i class="fas fa-child activities-display"></i>
+            <% end %>
+            <% if grandma.pet_sitting %>
+            <i class="fas fa-paw activities-display"></i>
+            <% end %>
+            <% if grandma.knitting %>
+            <i class="fas fa-cut activities-display"></i>
+            <% end %>
+            <%= link_to "", grandma_path(grandma), class:"card-link" %>
+          </div>
         </div>
-      </div>
 
-      <% else  %>
+        <% else  %>
 
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
-        <div class="grandma-title">
-          <h2><%= grandma.user.first_name %></h2>
-          <p><%= grandma.user.address %></p>
-          <% if grandma.cooking %>
-          <i class="fas fa-utensils"></i>
-          <% end %>
-          <% if grandma.baby_sitting %>
-          <i class="fas fa-child""></i>
-          <% end %>
-          <% if grandma.pet_sitting %>
-          <i class="fas fa-paw"></i>
-          <% end %>
-          <% if grandma.knitting %>
-          <i class="fas fa-hand-scissors"></i>
-          <% end %>
-          <%= link_to "", grandma_path(grandma), class:"card-link" %>
+        <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
+          <div class="grandma-title">
+            <h2><%= grandma.user.first_name %></h2>
+            <p><%= grandma.user.address %></p>
+            <% if grandma.cooking %>
+            <i class="fas fa-utensils"></i>
+            <% end %>
+            <% if grandma.baby_sitting %>
+            <i class="fas fa-child""></i>
+            <% end %>
+            <% if grandma.pet_sitting %>
+            <i class="fas fa-paw"></i>
+            <% end %>
+            <% if grandma.knitting %>
+            <i class="fas fa-hand-scissors"></i>
+            <% end %>
+            <%= link_to "", grandma_path(grandma), class:"card-link" %>
+          </div>
         </div>
+        <% end %>
       </div>
       <% end %>
+      <% end %>
     </div>
-    <% end %>
-    <% end %>
   </div>
+</div>
+
 <div class="mission-text">
   <p class="underline">Vous cherchez une baby-sitter expérimentée?</p>
 </div>
-<h4>Demandez à...</h4>
+
 <div class="grandma-cards">
   <div class="row">
-     <% @grandmas.each do |grandma| %>
-    <% if grandma.baby_sitting %>
-     <div class="col-xs-12 col-sm-3 col-md-3">
-      <% if grandma.user.photo %>
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
-        <div class="grandma-title">
-          <h2><%= grandma.user.first_name %></h2>
-          <p><%= grandma.user.address %></p>
-          <% if grandma.cooking %>
-          <i class="fas fa-utensils activities-display"></i>
-          <% end %>
-          <% if grandma.baby_sitting %>
-          <i class="fas fa-child activities-display"></i>
-          <% end %>
-          <% if grandma.pet_sitting %>
-          <i class="fas fa-paw activities-display"></i>
-          <% end %>
-          <% if grandma.knitting %>
-          <i class="fas fa-cut activities-display"></i>
-          <% end %>
-          <%= link_to "", grandma_path(grandma), class:"card-link" %>
+    <div class="col-xs-12 col-sm-6 col-md-12">
+      <% @grandmas.each do |grandma| %>
+      <% if grandma.baby_sitting %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <% if grandma.user.photo %>
+        <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
+          <div class="grandma-title">
+            <h2><%= grandma.user.first_name %></h2>
+            <p><%= grandma.user.address %></p>
+            <% if grandma.cooking %>
+            <i class="fas fa-utensils activities-display"></i>
+            <% end %>
+            <% if grandma.baby_sitting %>
+            <i class="fas fa-child activities-display"></i>
+            <% end %>
+            <% if grandma.pet_sitting %>
+            <i class="fas fa-paw activities-display"></i>
+            <% end %>
+            <% if grandma.knitting %>
+            <i class="fas fa-cut activities-display"></i>
+            <% end %>
+            <%= link_to "", grandma_path(grandma), class:"card-link" %>
+          </div>
         </div>
-      </div>
 
-      <% else  %>
+        <% else  %>
 
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
-        <div class="grandma-title">
-          <h2><%= grandma.user.first_name %></h2>
-          <p><%= grandma.user.address %></p>
-          <% if grandma.cooking %>
-          <i class="fas fa-utensils"></i>
-          <% end %>
-          <% if grandma.baby_sitting %>
-          <i class="fas fa-child""></i>
-          <% end %>
-          <% if grandma.pet_sitting %>
-          <i class="fas fa-paw"></i>
-          <% end %>
-          <% if grandma.knitting %>
-          <i class="fas fa-hand-scissors"></i>
-          <% end %>
-          <%= link_to "", grandma_path(grandma), class:"card-link" %>
+        <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
+          <div class="grandma-title">
+            <h2><%= grandma.user.first_name %></h2>
+            <p><%= grandma.user.address %></p>
+            <% if grandma.cooking %>
+            <i class="fas fa-utensils"></i>
+            <% end %>
+            <% if grandma.baby_sitting %>
+            <i class="fas fa-child""></i>
+            <% end %>
+            <% if grandma.pet_sitting %>
+            <i class="fas fa-paw"></i>
+            <% end %>
+            <% if grandma.knitting %>
+            <i class="fas fa-hand-scissors"></i>
+            <% end %>
+            <%= link_to "", grandma_path(grandma), class:"card-link" %>
+          </div>
         </div>
+        <% end %>
       </div>
       <% end %>
+      <% end %>
     </div>
-    <% end %>
-    <% end %>
   </div>
+</div>
+
 <div class="mission-text">
   <p class="underline">Personne pour garder votre chien?</p>
 </div>
-<h4>Demandez à...</h4>
+
 <div class="grandma-cards">
   <div class="row">
-     <% @grandmas.each do |grandma| %>
-    <% if grandma.pet_sitting %>
-     <div class="col-xs-12 col-sm-3 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-12">
+      <% @grandmas.each do |grandma| %>
+      <% if grandma.pet_sitting %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <% if grandma.user.photo %>
+        <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
+          <div class="grandma-title">
+            <h2><%= grandma.user.first_name %></h2>
+            <p><%= grandma.user.address %></p>
+            <% if grandma.cooking %>
+            <i class="fas fa-utensils activities-display"></i>
+            <% end %>
+            <% if grandma.baby_sitting %>
+            <i class="fas fa-child activities-display"></i>
+            <% end %>
+            <% if grandma.pet_sitting %>
+            <i class="fas fa-paw activities-display"></i>
+            <% end %>
+            <% if grandma.knitting %>
+            <i class="fas fa-cut activities-display"></i>
+            <% end %>
+            <%= link_to "", grandma_path(grandma), class:"card-link" %>
+          </div>
+        </div>
+
+        <% else  %>
+
+        <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
+          <div class="grandma-title">
+            <h2><%= grandma.user.first_name %></h2>
+            <p><%= grandma.user.address %></p>
+            <% if grandma.cooking %>
+            <i class="fas fa-utensils"></i>
+            <% end %>
+            <% if grandma.baby_sitting %>
+            <i class="fas fa-child""></i>
+            <% end %>
+            <% if grandma.pet_sitting %>
+            <i class="fas fa-paw"></i>
+            <% end %>
+            <% if grandma.knitting %>
+            <i class="fas fa-hand-scissors"></i>
+            <% end %>
+            <%= link_to "", grandma_path(grandma), class:"card-link" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="mission-text">
+  <p class="underline">Envie d'une pièce unique tricotée à la main?</p>
+</div>
+
+<div class="grandma-cards">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-12">
+      <% @grandmas.each do |grandma| %>
+      <% if grandma.knitting %>
+     <div class="col-xs-12 col-sm-6 col-md-4" style="text-align: center">
       <% if grandma.user.photo %>
       <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
         <div class="grandma-title">
@@ -167,59 +235,5 @@
     <% end %>
     <% end %>
   </div>
-<div class="mission-text">
-  <p class="underline">Envie d'une pièce unique tricotée à la main?</p>
 </div>
-<h4>Demandez à...</h4>
-<div class="grandma-cards">
-  <div class="row">
-     <% @grandmas.each do |grandma| %>
-    <% if grandma.knitting %>
-     <div class="col-xs-12 col-sm-3 col-md-3">
-      <% if grandma.user.photo %>
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path grandma.user.photo %>')">
-        <div class="grandma-title">
-          <h2><%= grandma.user.first_name %></h2>
-          <p><%= grandma.user.address %></p>
-          <% if grandma.cooking %>
-          <i class="fas fa-utensils activities-display"></i>
-          <% end %>
-          <% if grandma.baby_sitting %>
-          <i class="fas fa-child activities-display"></i>
-          <% end %>
-          <% if grandma.pet_sitting %>
-          <i class="fas fa-paw activities-display"></i>
-          <% end %>
-          <% if grandma.knitting %>
-          <i class="fas fa-cut activities-display"></i>
-          <% end %>
-          <%= link_to "", grandma_path(grandma), class:"card-link" %>
-        </div>
-      </div>
-
-      <% else  %>
-
-      <div class="grandma-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://clipartbarn.com/wp-content/uploads/2016/12/Women-black-lady-clipart-kid.png')">
-        <div class="grandma-title">
-          <h2><%= grandma.user.first_name %></h2>
-          <p><%= grandma.user.address %></p>
-          <% if grandma.cooking %>
-          <i class="fas fa-utensils"></i>
-          <% end %>
-          <% if grandma.baby_sitting %>
-          <i class="fas fa-child""></i>
-          <% end %>
-          <% if grandma.pet_sitting %>
-          <i class="fas fa-paw"></i>
-          <% end %>
-          <% if grandma.knitting %>
-          <i class="fas fa-hand-scissors"></i>
-          <% end %>
-          <%= link_to "", grandma_path(grandma), class:"card-link" %>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <% end %>
-    <% end %>
   </div>

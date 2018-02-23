@@ -1,9 +1,10 @@
 <div class="wrap">
-  <div class="mission-text">
-    <%= cl_image_tag("doubtfire_logo_white") %><br>
-    <p class="underline" style="color: white;">Trouvez une grand-mère près de chez vous</p>
+  <div class="map-text">
+    <%= cl_image_tag("doubtfire_logo_white", width: 50, height: 50, crop: :scale) %>
+    <p class="underline-map" style="color: white; margin: 0px 10px">Trouvez une grand-mère près de chez vous</p>
+    <%= cl_image_tag("doubtfire_logo_white", width: 50, height: 50, crop: :scale) %>
   </div>
 
-  <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
+  <div id="map" style="width: 99%; height: 500px; margin: 0px auto; display: inline-block;" data-markers="<%= @markers.to_json %>">
   </div>
 </div>
