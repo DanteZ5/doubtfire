@@ -23,6 +23,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def rate?
+    true
+  end
+
 
   class Scope < Scope
     def resolve
