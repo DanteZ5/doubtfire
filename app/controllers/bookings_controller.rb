@@ -27,14 +27,23 @@ class BookingsController < ApplicationController
     sleep 1.5
     @booking = Booking.new(booking_params)
     authorize @booking
+
+    # ameliore les champs de booking
+    @booking.date = params[:booking][:date]
+    @booking.start_hour = "#{params[:booking]["start_hour(4i)"]} : #{params[:booking]["start_hour(5i)"]}"
+    @booking.end_hour = "#{params[:booking]["end_hour(4i)"]} : #{params[:booking]["end_hour(5i)"]}"
     @booking.user_id = current_user.id
+
     @booking.save
+
+
     redirect_to grandma_booking_path(@booking.grandma, @booking)
   end
 
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    @end_booking = endbooking(@booking)
   end
 
   # def edit
@@ -67,6 +76,16 @@ class BookingsController < ApplicationController
 
   def booking_params
     #white list
-    params.require(:booking).permit(:status, :start_date, :end_date, :grandma_id, :user_id)
+    params.require(:booking).permit(:status, :start_date, :end_date, :grandma_id, :user_id, :date, :start_hour, :end_hour)
+  end
+
+   # fonction qui créé le format convionnel pour la fin du booking
+  def endbooking(booking)
+    year = @booking.date.split('-').first.to_i
+    month = @booking.date.split('-').second.to_i
+    day = @booking.date.split('-').third.to_i
+    hour = @booking.end_hour.split(' : ').first.to_i
+    min = @booking.end_hour.split(' : ').second.to_i
+    Time.new(year,month,day,hour,min)
   end
 end

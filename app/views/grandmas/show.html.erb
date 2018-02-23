@@ -13,7 +13,7 @@
     <div class="card-show">
       <h3>More about <%= @grandma.user.first_name %></h3>
       <p id="grandma-description"><%=  @grandma.user.description%></p>
-       <h3>Raymonde's ratings</h3>
+       <h3><%= @grandma.user.first_name %>'s ratings</h3>
        <p> <% @grandma.user.review.times do  %>
       <span class="glyphicon glyphicon-star"></span>
         <% end %>
