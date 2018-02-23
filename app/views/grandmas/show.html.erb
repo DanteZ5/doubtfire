@@ -17,7 +17,7 @@
        <p> <% @grandma.user.review.times do  %>
       <span class="glyphicon glyphicon-star"></span>
         <% end %>
-        <% blank_star = 5 - @grandma.user.review %>
+        <% blank_star = 5 - @grandma.average_note %>
         <% blank_star.times do %>
        <span class="glyphicon glyphicon-star-empty"></span>
         <% end %></p>

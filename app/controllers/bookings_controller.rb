@@ -67,8 +67,9 @@ class BookingsController < ApplicationController
 
     # systeme de vote
     unless params[:note].nil?
-     @booking.grandma.user.update(review: params[:note].to_i)
-     redirect_to grandma_path(@booking.grandma.id)
+      @booking.grandma.new_vote(params[:note].to_i)
+      # @booking.grandma.user.update(review: params[:note].to_i)
+      redirect_to grandma_path(@booking.grandma.id)
     end
   end
 
