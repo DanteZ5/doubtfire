@@ -1,0 +1,9 @@
+<div class="wrap">
+  <div class="mission-text">
+    <%= cl_image_tag("doubtfire_logo_white") %><br>
+    <p class="underline" style="color: white;">Trouvez une grand-mère près de chez vous</p>
+  </div>
+
+  <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
+  </div>
+</div>

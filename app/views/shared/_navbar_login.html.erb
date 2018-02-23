@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <%= image_tag("doubtfire_logo_white.png") %>
+    <%= cl_image_tag("doubtfire_logo_white") %>
   </a>
 
   <div>
@@ -16,7 +16,7 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <a href="/grandmas/#grandma-cards" class= "navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
+    <a href="/grandmas/#mission" class= "navbar-wagon-item navbar-wagon-link">OUR GRANDMAS</a>
   <!-- Profile picture with dropdown list -->
      <%= link_to "LOGIN", "#", class: "navbar-wagon-item navbar-wagon-link", data: { toggle: 'modal', target: '.modal-sign_in'} %>
 
