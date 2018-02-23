@@ -76,13 +76,13 @@ users_attributes = [
 users = User.create!(users_attributes)
 
 grandma_attributes = [
-{ user_id: users[0].id, price: 13, cooking: true, sum_notes: 20, count_notes: 5 },
+{ user_id: users[0].id, price: 13, cooking: true, sum_notes: 25, count_notes: 6 },
 { user_id: users[1].id, price: 13, cooking: true, sum_notes: 18, count_notes: 5  },
 { user_id: users[2].id, price: 15, knitting: true, cooking: true,
   pet_sitting: true, baby_sitting: true, sum_notes: 15, count_notes: 5  },
-{ user_id: users[3].id, price: 15, knitting: true, cooking: true, sum_notes: 22, count_notes: 5 },
+{ user_id: users[3].id, price: 15, knitting: true, cooking: true, sum_notes: 58, count_notes: 15 },
 { user_id: users[4].id, price: 12, baby_sitting: true, cooking: true, sum_notes: 10, count_notes: 5  },
-{ user_id: users[5].id, price: 12, pet_sitting: true, sum_notes: 14, count_notes: 5  },
+{ user_id: users[5].id, price: 12, pet_sitting: true, sum_notes: 9, count_notes: 3  },
 { user_id: users[6].id, price: 18, baby_sitting: true, sum_notes: 19, count_notes: 5  },
 { user_id: users[7].id, price: 18, baby_sitting: true, pet_sitting: true, sum_notes: 13, count_notes: 5 }
 ]

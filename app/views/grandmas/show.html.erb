@@ -15,12 +15,12 @@
       <p id="grandma-description"><%=  @grandma.user.description%></p>
        <h3><%= @grandma.user.first_name %>'s ratings</h3>
        <p><%= @grandma.count_notes %> meeting experiences</p>
-       <p> <% @grandma.user.review.times do  %>
+       <p> <% @grandma.average_note.times do  %>
       <span class="glyphicon glyphicon-star"></span>
         <% end %>
         <% blank_star = 5 - @grandma.average_note %>
         <% blank_star.times do %>
-       <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
         <% end %></p>
         <button class="btn btn-classic" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     <%= "Book #{@grandma.user.first_name} for #{@grandma.price}€ / hour" %>
